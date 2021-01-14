@@ -7,7 +7,7 @@
   <div class="play">
   <% @movies.each do |movie| %>
       <a href="/movies/ <%= movie.id %> ">
-      <%= cl_image_tag movie.photo.key, width: 360, height: 270 %>
+      <%= cl_image_tag movie.photo.key, width: 260, height: 170 %>
       </a>
   <% end %>
   </div>
