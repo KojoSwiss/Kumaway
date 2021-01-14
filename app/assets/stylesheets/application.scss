@@ -12,3 +12,11 @@
 @import "components/index";
 @import "pages/index";
 
+.play {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 5px;
+  grid-row-gap: 5px;
+  grid-column-gap:1px;
+}
+

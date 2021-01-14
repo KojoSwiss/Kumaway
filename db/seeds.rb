@@ -1,13 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts 'Cleaning the database'
 
 Movie.destroy_all
+
+images = ['https://image.winudf.com/v2/image1/Y29tLm9ubHlzbWFydGFwcHMua3VtYXdvb2RmdW5ueXZpZGVvc19zY3JlZW5fMV8xNTUyNTk3MDE2XzAzMg/screen-1.jpg?fakeurl=1&type=.jpg',
+          'https://i.ytimg.com/vi/SBfjZ7eKIXg/maxresdefault.jpg',
+          'https://i.ytimg.com/vi/S20nYmKn2x0/maxresdefault.jpg',
+          'https://i.ytimg.com/vi/Qt7hjixDSLk/maxresdefault.jpg',
+          'https://i.ytimg.com/vi/kFjIp13hmuw/maxresdefault.jpg',
+          'https://i.ytimg.com/vi/y9Ad3mqSiPQ/maxresdefault.jpg']
 
 10.times do
   movie = Movie.new(
@@ -17,8 +19,8 @@ Movie.destroy_all
     user_id: 1,
      category_id: rand(1..4)
     )
-    # file = URI.open(images.sample)
-    # tailor.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    file = URI.open(images.sample)
+    movie.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
   puts "#{movie.title} done"
   movie.save!

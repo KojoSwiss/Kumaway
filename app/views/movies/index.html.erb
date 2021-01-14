@@ -4,8 +4,12 @@
 <% if @movies.count == 0 %>
   <h3>No Movies in this category</h3>
 <% else %>
+  <div class="play">
   <% @movies.each do |movie| %>
-    <h2> <%= link_to movie.title, movie_path(movie) %> </h2>
+      <a href="/movies/ <%= movie.id %> ">
+      <%= cl_image_tag movie.photo.key, width: 360, height: 270 %>
+      </a>
   <% end %>
+  </div>
 <% end %>
 
