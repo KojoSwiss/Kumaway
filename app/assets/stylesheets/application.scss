@@ -20,3 +20,48 @@
   grid-column-gap:1px;
 }
 
+.play-show {
+  height: 475px;
+  width: 325px;
+}
+
+.play-info {
+
+  .play-title {
+    margin-top: 0;
+    font-size: 4em;
+    font-weight: bold;
+  }
+
+  .avg-rating {
+    font-size: 1.5em;
+    margin-top: 75px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .number-of-reviews {
+    font-size: 0.85em;
+    font-style: italic;
+  }
+
+  .play-director {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: lighter;
+    span {
+      font-size: 0.80em;
+    }
+  }
+
+  .play-desc {
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+}
+
