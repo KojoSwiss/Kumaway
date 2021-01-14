@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'Cleaning the database'
+
+Movie.destroy_all
+
+10.times do
+  movie = Movie.new(
+    title: Faker::Movie.title,
+    description: Faker::Movie.quote,
+    director: Faker::DcComics.villain,
+    )
+    # file = URI.open(images.sample)
+    # tailor.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+  puts "#{movie.title} done"
+  movie.save!
+end
+puts 'Done'
